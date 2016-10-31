@@ -11,7 +11,7 @@ Libroute::Component.run do |options|
   result = Hash.new
 
   im = Image.from_blob(options['input'].data).first
-  im = im.quantize(256, Magick::RGBColorspace)
+  im = im.quantize(65536, Magick::RGBColorspace)
   # Convert to fits image
 #  im.format = 'fits'
 #  result['output'] = BSON::Binary.new(im.to_blob)
